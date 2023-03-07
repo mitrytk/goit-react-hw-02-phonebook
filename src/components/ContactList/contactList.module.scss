@@ -1,0 +1,40 @@
+.list {
+    list-style-type: none;
+    display: flex;
+    flex-direction: column;
+    padding: 0;
+
+    .item {
+        display: flex;
+        align-items: baseline;
+        position: relative;
+        background-color: rgba(0, 0, 0, 0.104);
+        padding: 10px 15px;
+        border-radius: 5px;
+
+        &:hover {
+            background-color: rgba(0, 0, 0, 0.241);
+        }
+    }
+
+    .item+.item {
+        margin-top: 10px;
+    }
+
+    .button {
+        position: absolute;
+        right: 10px;
+        width: 50px;
+        height: 20px;
+        font-size: 12px;
+        border-radius: 6px;
+        border: 1px solid rgb(86, 86, 86);
+        background-color: rgba(202, 25, 25, 0.779);
+        color: white;
+    }
+
+    .contactName {
+        margin-right: 10px;
+        font-weight: 500;
+    }
+}
