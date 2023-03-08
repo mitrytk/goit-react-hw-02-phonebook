@@ -6,17 +6,20 @@ import ContactForm from "./ContactForm/ContactForm";
 import Filter from "./Filter/Filter";
 import ContactList from "./ContactList/ContactList";
 
-const CONTACTS_STATE = [
-  {id: 'id-1', name: 'Rosie Simpson', number: '459-12-56'},
-  {id: 'id-2', name: 'Hermione Kline', number: '443-89-12'},
-  {id: 'id-3', name: 'Eden Clements', number: '645-17-79'},
-  {id: 'id-4', name: 'Annie Copeland', number: '227-91-26'},
-];
+// const CONTACTS_STATE = [
+//   {id: 'id-1', name: 'Rosie Simpson', number: '459-12-56'},
+//   {id: 'id-2', name: 'Hermione Kline', number: '443-89-12'},
+//   {id: 'id-3', name: 'Eden Clements', number: '645-17-79'},
+//   {id: 'id-4', name: 'Annie Copeland', number: '227-91-26'},
+// ];
 
 export class App extends Component {
   state = {
     contacts: [
-      ...CONTACTS_STATE
+      {id: 'id-1', name: 'Rosie Simpson', number: '459-12-56'},
+      {id: 'id-2', name: 'Hermione Kline', number: '443-89-12'},
+      {id: 'id-3', name: 'Eden Clements', number: '645-17-79'},
+      {id: 'id-4', name: 'Annie Copeland', number: '227-91-26'},
     ],
     filter: '',
   }
@@ -28,8 +31,8 @@ export class App extends Component {
       alert(`${state.name} is already in contacts`)
       return;
     }
-    CONTACTS_STATE.push({id: nanoid(4), name: state.name, number: state.number});
-    this.setState({contacts: [...CONTACTS_STATE]});
+    // CONTACTS_STATE.push({id: nanoid(4), name: state.name, number: state.number});
+    this.setState(prevState => ({ contacts: [...prevState.contacts, {id: nanoid(4), name: state.name, number: state.number}]}));
   }
 
   handleChange = (evt) => {
